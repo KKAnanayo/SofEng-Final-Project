@@ -1,0 +1,6 @@
+.landingPageBody{
+    background-image: url(../Images/backgroundImage.jpg);
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    }
