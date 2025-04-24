@@ -99,46 +99,49 @@ function About() {
     <div className="main">
       {/* About Section */}
       <div className="about-section">
-        <h3>Mrs. Baker’s: Proudly Vizcayano</h3> 
-        <div className="article">
-          <NavigateBefore
-            className="icon left-arrow"
-            onClick={handlePrevArticle}
-          />
-          <div className="content">
-            <p>{articles[currentArticleIndex].content1}</p>
-            {articles[currentArticleIndex].image && (
-              <img
-                src={articles[currentArticleIndex].image}
-                alt="Article Image"
-                className="article-image"
-              />
-            )}
-            {articles[currentArticleIndex].video && (
-              <iframe
-                src={articles[currentArticleIndex].video}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                title="Embedded YouTube Video"
-                className="Video"
-              ></iframe>
-            )}
-            <p
-              className={`content-text ${
-                currentArticleIndex === 2 ? "long-text" : ""
-              }`}
-              dangerouslySetInnerHTML={{
-                __html: articles[currentArticleIndex].content2.replace(/\n/g, ""),
-              }}
-            ></p>
-          </div>
-          <NavigateNext
-            className="icon right-arrow"
-            onClick={handleNextArticle}
-          />
-        </div>
+  <b className="about-title">About</b>
+  <h3>Mrs. Baker’s: Proudly Vizcayano</h3>
+  <div className="article">
+    <NavigateBefore
+      className="icon left-arrow"
+      onClick={handlePrevArticle}
+    />
+    <div className="content">
+      <p className="article-heading">{articles[currentArticleIndex].content1}</p>
+      {articles[currentArticleIndex].image && (
+        <img
+          src={articles[currentArticleIndex].image}
+          alt="Article Image"
+          className="article-image"
+        />
+      )}
+      {articles[currentArticleIndex].video && (
+        <iframe
+          src={articles[currentArticleIndex].video}
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          title="Embedded YouTube Video"
+          className="Video"
+        ></iframe>
+      )}
+      <div className="article-content">
+        <p
+          className={`content-text ${
+            currentArticleIndex === 2 ? "long-text" : ""
+          }`}
+          dangerouslySetInnerHTML={{
+            __html: articles[currentArticleIndex].content2.replace(/\n/g, ""),
+          }}
+        ></p>
       </div>
+    </div>
+    <NavigateNext
+      className="icon right-arrow"
+      onClick={handleNextArticle}
+    />
+  </div>
+</div>
   
       {/* Social Media Section */}
       <div className="social-section">
