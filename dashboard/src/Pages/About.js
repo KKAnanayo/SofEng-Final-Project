@@ -75,7 +75,7 @@ function About() {
     },
     {
       content1: "",
-      image: "",
+      image: "https://scontent.fbag2-1.fna.fbcdn.net/v/t39.30808-6/477709287_1151390306994820_2515432605966298130_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=zJfQ7kf40IgQ7kNvwE16nnW&_nc_oc=AdkrX8H4cDm_qJsCrAE8BKT0gq4lzWmuvZb4dJ_Wlh8sE15RVK9QAUEoa_BSrTZaAuc&_nc_zt=23&_nc_ht=scontent.fbag2-1.fna&_nc_gid=UotzTHsNBSfOKsyJ6Qxphg&oh=00_AfGeq_0dOv35YfAYOKv687iEYgST6HC2cYI3DywD1ThsdQ&oe=680F7960",
       content2: `"I am proud of them—we share the same vision. I’m proud of the team that we have now. We are like a family. I know each and everyone in the team and their families as well. Our being a family is something that I feel proud of, because that is when I feel very much myself and at home in my own kitchen,” she shares.
       "A great dish for me is something that has a soul, reminiscent of a story, something cooked with passion,” she begins her story in the documentary.
       In the coming moooooore years, however, we are quite sure Mrs. Baker’s will see itself as Chef Jehan envisioned: a leader in Cagayan Valley’s food industry.
@@ -99,7 +99,6 @@ function About() {
     <div className="main">
       {/* About Section */}
       <div className="about-section">
-        <b className="about-title">About</b>
         <h3>Mrs. Baker’s: Proudly Vizcayano</h3> 
         <div className="article">
           <NavigateBefore

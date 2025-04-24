@@ -17,18 +17,9 @@ body {
     padding: 40px 20px;
     gap: 40px; /* Add spacing between sections */
   }
-  
-  /* About Section */
-.about-title {
-    font-size: 36px; /* Large and bold for emphasis */
-    font-weight: bold;
-    color: #222; /* Darker color for better contrast */
-    margin-bottom: 10px; /* Add spacing below the title */
-    text-align: center;
-  }
-  
+
   .about-section h3 {
-    margin-top: 10vh;
+    margin-top: 15vh;
     font-size: 24px; /* Slightly smaller than the title */
     font-weight: 600;
     color: #444; /* Softer color for subtitle */
@@ -40,7 +31,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 80%;
+        width: 100%;
     max-width: 800px;
     background-color: #fff;
     border-radius: 10px;
@@ -75,7 +66,7 @@ body {
   .Video {
     width: 100%;
     max-width: 600px;
-    height: auto;
+    height: 30vh;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
