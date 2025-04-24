@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "../Style/About.css";
 import facebookImg from "../Images/facebook.png";
 import gmailImg from "../Images/gmail.png";
@@ -8,6 +8,16 @@ import NavigateBefore from "@mui/icons-material/NavigateBefore";
 import NavigateNext from "@mui/icons-material/NavigateNext";
 
 function About() {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const storedAdmin = localStorage.getItem("adminID");
+
+    // If there's an adminID and not on the admin page, redirect to admin
+    if (storedAdmin && window.location.pathname !== "/admin") {
+      navigate("/admin");
+    }
+  }, [navigate]);
+
   const facebookUrl = "https://www.facebook.com/Mrs.Bakers/";
    const [currentArticleIndex, setCurrentArticleIndex] = useState(0);
 
@@ -111,7 +121,7 @@ function About() {
       {articles[currentArticleIndex].image && (
         <img
           src={articles[currentArticleIndex].image}
-          alt="Article Image"
+          alt="Article"
           className="article-image"
         />
       )}
@@ -149,7 +159,7 @@ function About() {
         <div className="social-container">
           <Link to={facebookUrl} className="link">
             <div className="social-box">
-              <img src={facebookImg} alt="Facebook" className="social-image" />
+              <img src={facebookImg} alt="Facebook logo" className="social-image" />
               <h4>Facebook</h4>
               <p>Connect with us on Facebook for updates and more.</p>
               <p className="click-here">Click here</p>
@@ -157,7 +167,7 @@ function About() {
           </Link>
           <Link to="mailto:contact@mrsbakerscafe.com" className="link">
             <div className="social-box">
-              <img src={gmailImg} alt="Gmail" className="social-image" />
+              <img src={gmailImg} alt="Gmail logo" className="social-image" />
               <h4>Gmail</h4>
               <p>Reach us via Gmail for any inquiries or support.</p>
               <p className="click-here">Click here</p>
@@ -165,7 +175,7 @@ function About() {
           </Link>
           <div className="link">
             <div className="social-box">
-              <img src={phoneImg} alt="Phone" className="social-image" />
+              <img src={phoneImg} alt="Phone icon" className="social-image" />
               <h4>Telephone Number</h4>
               <p>Call us for immediate assistance or support. (078) 805 3500</p>
             </div>
