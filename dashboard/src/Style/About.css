@@ -8,7 +8,7 @@ body {
 }
   
 /* Main Container */
-.main {
+.about-main {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -59,11 +59,11 @@ body {
 }
   
 .left-arrow {
-    left: -40px;
+    left: -10vh;
 }
   
 .right-arrow {
-    right: -40px;
+    right: -10vh;
 }
   
 .content {

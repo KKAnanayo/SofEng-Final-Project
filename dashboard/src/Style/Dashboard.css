@@ -1,0 +1,72 @@
+.loginBody {
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradient background */
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Ensure text is readable */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start fully transparent */
+    }
+    to {
+        opacity: 1; /* End fully visible */
+    }
+}
+
+.login-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 12px; /* Rounded corners for a modern look */
+    padding: 30px; /* Increased padding for better spacing */
+    width: 400px; /* Increased width for better layout */
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    animation: fadeIn 1.5s ease-in-out; /* Apply the updated fade-in animation */
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Add spacing between buttons */
+}
+
+button {
+    background-color: #2575fc;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #6a11cb; /* Change color on hover */
+}
+
+.custom-modal {
+    background-color: white;
+}

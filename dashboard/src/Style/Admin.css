@@ -1,0 +1,149 @@
+.admin-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    padding-top: 120px;
+    font-family: Arial, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    overflow-y: auto;
+}
+
+h3 {
+    margin-bottom: 20px;
+    margin-top: 5vh;
+    font-size: 3vh;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 30px;
+    gap: 20px;
+}
+
+.fieldBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    gap: 15px;
+}
+
+.input-container input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fff;
+    width: 100%;
+    max-width: 300px;
+    font-size: 16px;
+}
+
+.input-container img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.text-field {
+    margin: 10px;
+    width: 100%;
+    max-width: 300px;
+    font-size: 14px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.button-group button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-group button:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 1400px;
+}
+
+.image-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fff;
+    width: 23%;
+    max-width: 320px;
+    height: 420px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.image-item img {
+    display: block;
+    max-width: 100%;
+    max-height: 250px;
+    object-fit: contain;
+    margin: auto;
+    border-radius: 8px;
+}
+
+.image-text {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 10px;
+}

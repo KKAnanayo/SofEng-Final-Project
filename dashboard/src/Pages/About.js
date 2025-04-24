@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState,useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../Style/About.css";
 import facebookImg from "../Images/facebook.png";
@@ -17,9 +17,8 @@ function About() {
       navigate("/admin");
     }
   }, [navigate]);
-
   const facebookUrl = "https://www.facebook.com/Mrs.Bakers/";
-   const [currentArticleIndex, setCurrentArticleIndex] = useState(0);
+  const [currentArticleIndex, setCurrentArticleIndex] = useState(0);
 
   const articles = [
     {
@@ -57,7 +56,8 @@ function About() {
     },
     {
       content1: "",
-      image: "",
+      image:
+        "https://scontent.fbag2-1.fna.fbcdn.net/v/t39.30808-6/477709287_1151390306994820_2515432605966298130_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=zJfQ7kf40IgQ7kNvwE16nnW&_nc_oc=AdkrX8H4cDm_qJsCrAE8BKT0gq4lzWmuvZb4dJ_Wlh8sE15RVK9QAUEoa_BSrTZaAuc&_nc_zt=23&_nc_ht=scontent.fbag2-1.fna&_nc_gid=UotzTHsNBSfOKsyJ6Qxphg&oh=00_AfGeq_0dOv35YfAYOKv687iEYgST6HC2cYI3DywD1ThsdQ&oe=680F7960",
       content2: `Mrs. Baker’s is what you call a gathering of everything its head chef learned—from other brilliant chefs, to her visits abroad, food-tasting in other countries, and her studies. It’s a collection of all her experiences built into an empire that conquered the Vizcayanos’ taste.
       Though a native of the urban life, Chef Jehan calls Mrs. Baker’s a truly Vizcayano restaurant.
       “Mrs. Bakers…is a lot of contradictions, like it’s modern structurally, yet something about it feels homey and familiar. People say it’s like a kind of restaurant you’ll find in the city, yet if you come here and be inside the restaurant, something about [Mrs.] Baker’s personifies Vizcaya.”
@@ -85,7 +85,8 @@ function About() {
     },
     {
       content1: "",
-      image: "https://scontent.fbag2-1.fna.fbcdn.net/v/t39.30808-6/477709287_1151390306994820_2515432605966298130_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=zJfQ7kf40IgQ7kNvwE16nnW&_nc_oc=AdkrX8H4cDm_qJsCrAE8BKT0gq4lzWmuvZb4dJ_Wlh8sE15RVK9QAUEoa_BSrTZaAuc&_nc_zt=23&_nc_ht=scontent.fbag2-1.fna&_nc_gid=UotzTHsNBSfOKsyJ6Qxphg&oh=00_AfGeq_0dOv35YfAYOKv687iEYgST6HC2cYI3DywD1ThsdQ&oe=680F7960",
+      image:
+        "https://scontent.fmnl17-6.fna.fbcdn.net/v/t39.30808-6/491398880_1211693264297857_5628817803514606674_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeF3TCK22bOAjk0ZBOoTZaEWW95QH6Pe2ytb3lAfo97bK7GLz3bWszYx4zBUzvAffqY57RraLMfxxB2c9OM99BsN&_nc_ohc=brJ8eINb330Q7kNvwGDQFfw&_nc_oc=Adkt6WH7qdGrfpmax3pF6KE-lgtYFpH98iuPH9AJjJze2kHJsmd4EDr7rHheh6TTPRw&_nc_zt=23&_nc_ht=scontent.fmnl17-6.fna&_nc_gid=PEAW2-UJY2A2ZT0UsaT4Eg&oh=00_AfFg-Ie3SXr1I0LGIdBHIC0t1TLC8caBv5gYVoXT5C_tmQ&oe=680FB6F2",
       content2: `"I am proud of them—we share the same vision. I’m proud of the team that we have now. We are like a family. I know each and everyone in the team and their families as well. Our being a family is something that I feel proud of, because that is when I feel very much myself and at home in my own kitchen,” she shares.
       "A great dish for me is something that has a soul, reminiscent of a story, something cooked with passion,” she begins her story in the documentary.
       In the coming moooooore years, however, we are quite sure Mrs. Baker’s will see itself as Chef Jehan envisioned: a leader in Cagayan Valley’s food industry.
@@ -106,60 +107,71 @@ function About() {
   };
 
   return (
-    <div className="main">
+    <div className="about-main">
       {/* About Section */}
       <div className="about-section">
-  <b className="about-title">About</b>
-  <h3>Mrs. Baker’s: Proudly Vizcayano</h3>
-  <div className="article">
-    <NavigateBefore
-      className="icon left-arrow"
-      onClick={handlePrevArticle}
-    />
-    <div className="content">
-      <p className="article-heading">{articles[currentArticleIndex].content1}</p>
-      {articles[currentArticleIndex].image && (
-        <img
-          src={articles[currentArticleIndex].image}
-          alt="Article"
-          className="article-image"
-        />
-      )}
-      {articles[currentArticleIndex].video && (
-        <iframe
-          src={articles[currentArticleIndex].video}
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          title="Embedded YouTube Video"
-          className="Video"
-        ></iframe>
-      )}
-      <div className="article-content">
-        <p
-          className={`content-text ${
-            currentArticleIndex === 2 ? "long-text" : ""
-          }`}
-          dangerouslySetInnerHTML={{
-            __html: articles[currentArticleIndex].content2.replace(/\n/g, ""),
-          }}
-        ></p>
+        <b className="about-title">About</b>
+        <h3>Mrs. Baker’s: Proudly Vizcayano</h3>
+        <div className="article">
+          <NavigateBefore
+            className="icon left-arrow"
+            onClick={handlePrevArticle}
+            style={{ fontSize: "10vh" }}
+          />
+          <div className="content">
+            <p className="article-heading">
+              {articles[currentArticleIndex].content1}
+            </p>
+            {articles[currentArticleIndex].image && (
+              <img
+                src={articles[currentArticleIndex].image}
+                alt="Article"
+                className="article-image"
+              />
+            )}
+            {articles[currentArticleIndex].video && (
+              <iframe
+                src={articles[currentArticleIndex].video}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title="Embedded YouTube Video"
+                className="Video"
+              ></iframe>
+            )}
+            <div className="article-content">
+              <p
+                className={`content-text ${
+                  currentArticleIndex === 2 ? "long-text" : ""
+                }`}
+                dangerouslySetInnerHTML={{
+                  __html: articles[currentArticleIndex].content2.replace(
+                    /\n/g,
+                    ""
+                  ),
+                }}
+              ></p>
+            </div>
+          </div>
+          <NavigateNext
+            className="icon right-arrow"
+            onClick={handleNextArticle}
+            style={{ fontSize: "10vh" }}
+          />
+        </div>
       </div>
-    </div>
-    <NavigateNext
-      className="icon right-arrow"
-      onClick={handleNextArticle}
-    />
-  </div>
-</div>
-  
+
       {/* Social Media Section */}
       <div className="social-section">
         <h3 className="Social-Title">Social Media & Contacts</h3>
         <div className="social-container">
           <Link to={facebookUrl} className="link">
             <div className="social-box">
-              <img src={facebookImg} alt="Facebook logo" className="social-image" />
+              <img
+                src={facebookImg}
+                alt="Facebook logo"
+                className="social-image"
+              />
               <h4>Facebook</h4>
               <p>Connect with us on Facebook for updates and more.</p>
               <p className="click-here">Click here</p>
