@@ -6,7 +6,6 @@ import MENU from './Pages/Menu';
 import About from './Pages/About';
 import TopBar from './Pages/TopBar';
 import Admin from './Pages/Admin';
-import SocialMedia from './Pages/SocialMedia';
 import './App.css';
 import Landingpage from './Pages/LandingPage';
 
@@ -19,7 +18,6 @@ function App() {
           <Route path='/' element={<Landingpage/>}/>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/menu" element={<MENU />} />
-          <Route path="/socialmedia" element={<SocialMedia />} />
           <Route path="/about" element={<About />} />
           <Route path="/Location" element={<Location />} />
           <Route path="/admin" element={<Admin />} />
