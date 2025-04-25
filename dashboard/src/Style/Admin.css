@@ -147,3 +147,17 @@ h3 {
     margin-top: auto;
     padding-top: 10px;
 }
+.buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 120px; 
+    text-align: center; 
+}
+
+.buttons button:hover {
+    background-color: #0056b3;
+    color: white;
+}

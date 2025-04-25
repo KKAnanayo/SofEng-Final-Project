@@ -8,6 +8,7 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
+  Box,
 } from "@mui/material";
 import "../Style/Admin.css";
 
@@ -227,26 +228,28 @@ function Admin() {
               </div>
               <div className="image-text">₱&nbsp;{data.Price}</div>
               <div className="buttons">
-                <Button
-                  variant="contained"
-                  onClick={() =>
-                    openEditDialog(
-                      data._id,
-                      data.Name,
-                      data.Price,
-                      data.Description
-                    )
-                  }
-                >
-                  Edit
-                </Button>
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  onClick={() => openDeleteDialog(data._id)}
-                >
-                  Delete
-                </Button>
+                <Box sx={{ display: "flex", gap: 1 }}>
+                  <Button
+                    variant="contained"
+                    onClick={() =>
+                      openEditDialog(
+                        data._id,
+                        data.Name,
+                        data.Price,
+                        data.Description
+                      )
+                    }
+                  >
+                    Edit
+                  </Button>
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    onClick={() => openDeleteDialog(data._id)}
+                  >
+                    Delete
+                  </Button>
+                </Box>
               </div>
             </div>
           );
