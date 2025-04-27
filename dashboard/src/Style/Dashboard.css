@@ -1,19 +1,19 @@
 .loginBody {
-    background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradient background */
+    background: linear-gradient(to right, #6a11cb, #2575fc);
     height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white; /* Ensure text is readable */
+    color: white;
 }
 
 @keyframes fadeIn {
     from {
-        opacity: 0; /* Start fully transparent */
+        opacity: 0;
     }
     to {
-        opacity: 1; /* End fully visible */
+        opacity: 1;
     }
 }
 
@@ -24,15 +24,15 @@
     transform: translate(-50%, -50%);
     background-color: white;
     border: 1px solid #ccc;
-    border-radius: 12px; /* Rounded corners for a modern look */
-    padding: 30px; /* Increased padding for better spacing */
-    width: 400px; /* Increased width for better layout */
+    border-radius: 12px;
+    padding: 30px;
+    width: 400px;
     max-width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
-    animation: fadeIn 1.5s ease-in-out; /* Apply the updated fade-in animation */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .login-container h2 {
@@ -49,7 +49,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px; /* Add spacing between buttons */
+    gap: 15px;
 }
 
 button {
@@ -64,7 +64,7 @@ button {
 }
 
 button:hover {
-    background-color: #6a11cb; /* Change color on hover */
+    background-color: #6a11cb;
 }
 
 .custom-modal {

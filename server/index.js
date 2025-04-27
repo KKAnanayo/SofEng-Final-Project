@@ -79,7 +79,7 @@ app.get("/get-image", async (req, res) => {
   }
 });
 
-// Delete endpoint
+
 app.delete("/delete-image/:id", async (req, res) => {
   const { id } = req.params;
   try {

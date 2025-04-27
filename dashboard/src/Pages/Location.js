@@ -6,9 +6,7 @@ import "../Style/Location.css";
 function Location() {
    const navigate = useNavigate();
     useEffect(() => {
-      const storedAdmin = localStorage.getItem("adminID");
-  
-      // If there's an adminID and not on the admin page, redirect to admin
+      const storedAdmin = localStorage.getItem("adminID");\
       if (storedAdmin && window.location.pathname !== "/admin") {
         navigate("/admin");
       }
