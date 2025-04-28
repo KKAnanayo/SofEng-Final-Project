@@ -93,7 +93,7 @@ function Admin() {
       const data = await response.json();
       if (data.status === "ok") {
         getImage(); // Update images after deletion
-        closeDeleteDialog(); // Close the delete confirmation dialog
+        closeDeleteDialog(); 
       } else {
         console.error("Error deleting image:", data.message);
       }
@@ -106,7 +106,7 @@ function Admin() {
     setEditId(id);
     setEditName(name);
     setEditPrice(price);
-    setEditDescription(description); // Set the description for editing
+    setEditDescription(description);
     setEditDialogOpen(true);
   };
 
@@ -115,7 +115,7 @@ function Admin() {
     setEditId(null);
     setEditName("");
     setEditPrice("");
-    setEditDescription(""); // Reset the description field
+    setEditDescription(""); 
   };
 
   const openDeleteDialog = (id) => {
@@ -141,12 +141,12 @@ function Admin() {
             name: editName,
             price: editPrice,
             description: editDescription,
-          }), // Include description in the update
+          }), 
         }
       );
       const data = await response.json();
       if (data.status === "ok") {
-        getImage(); // Update images after updating
+        getImage(); 
         closeEditDialog();
       } else {
         console.error("Error updating image:", data.message);
@@ -199,6 +199,7 @@ function Admin() {
             multiline
             rows={4}
             value={description}
+            inputProps={{ maxLength: 80 }} 
             onChange={(e) => setDescription(e.target.value)}
           />
           <div className="button-group">
@@ -227,6 +228,7 @@ function Admin() {
                 <b>{data.Name}</b>
               </div>
               <div className="image-text">₱&nbsp;{data.Price}</div>
+              <div className="image-description">{data.Description}</div>
               <div className="buttons">
                 <Box sx={{ display: "flex", gap: 1 }}>
                   <Button
@@ -286,6 +288,7 @@ function Admin() {
             multiline
             rows={4}
             value={editDescription}
+            inputProps={{ maxLength: 80 }} 
             onChange={(e) => setEditDescription(e.target.value)}
           />
         </DialogContent>

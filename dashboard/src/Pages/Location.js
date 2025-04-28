@@ -6,7 +6,7 @@ import "../Style/Location.css";
 function Location() {
    const navigate = useNavigate();
     useEffect(() => {
-      const storedAdmin = localStorage.getItem("adminID");\
+      const storedAdmin = localStorage.getItem("adminID");  
       if (storedAdmin && window.location.pathname !== "/admin") {
         navigate("/admin");
       }
