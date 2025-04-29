@@ -107,6 +107,7 @@ function Menu() {
                   gap: "10px",
                 }}
               >
+                <div className="ratings">
                 <b>Over All Ratings:</b>
                 <Rating
                   count={5}
@@ -115,6 +116,7 @@ function Menu() {
                   value={ratings[data._id] || 0}
                   edit={false}
                 />
+                </div>
               </div>
             </div>
           );
