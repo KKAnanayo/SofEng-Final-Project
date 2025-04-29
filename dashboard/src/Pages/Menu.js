@@ -51,7 +51,7 @@ function Menu() {
   const handleCommentSubmit = (dishId) => {
     const updatedComments = {
       ...comments,
-      [dishId]: [...(comments[dishId] || []), { text: currentComment, rating: currentRating }],
+      [dishId]: [...(comments[dishId] || []), { text: currentComment || "No comment", rating: currentRating }],
     };
     setComments(updatedComments);
     localStorage.setItem("comments", JSON.stringify(updatedComments));
@@ -68,7 +68,7 @@ function Menu() {
     setCurrentRating(0);
     setSelectedDish(null);
 
-    // Refresh the page to reflect changes
+
     window.location.reload();
   };
 
@@ -78,6 +78,7 @@ function Menu() {
 
   const handleCloseDialog = () => {
     setSelectedDish(null);
+    setCurrentRating(0); 
   };
 
   return (
@@ -186,7 +187,7 @@ function Menu() {
                   color="primary"
                   style={{ marginTop: "10px" }}
                   onClick={() => handleCommentSubmit(selectedDish._id)}
-                  disabled={!currentComment.trim() || currentRating === 0}
+                  disabled={currentRating === 0} 
                 >
                   Submit
                 </Button>
