@@ -12,7 +12,7 @@ function Dashboard() {
   const [modalLoginOpen, setModalLoginOpen] = useState(true);
   const [modalSignUpOpen, setModalSignUpOpen] = useState(false);
   const [adminNameError, setAdminNameError] = useState(false);
-  const [passwordError, setPasswordError] = useState(false);
+  const [passwordError, setPasswordError] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -33,7 +33,7 @@ function Dashboard() {
   function handleLogin() {
     if (!admin || !password) {
       setAdminNameError(!admin);
-      setPasswordError(!password);
+      setPasswordError(!password ? "Password is required" : "");
       return;
     }
     axios
@@ -48,7 +48,7 @@ function Dashboard() {
             navigate("/admin");
           } else {
             console.log("Incorrect password");
-            setPasswordError(true);
+            setPasswordError("Wrong password");
           }
         } else {
           console.log("Admin not found");
@@ -121,11 +121,14 @@ function Dashboard() {
             type="password"
             variant="outlined"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => {
+              setPassword(e.target.value);
+              setPasswordError(""); // Clear error when user starts typing
+            }}
             fullWidth
             margin="normal"
-            error={passwordError}
-            helperText={passwordError && "Password is required"}
+            error={!!passwordError}
+            helperText={passwordError}
           />
           <div
             className="button-container"
