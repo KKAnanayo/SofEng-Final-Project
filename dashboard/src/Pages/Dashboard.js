@@ -123,7 +123,7 @@ function Dashboard() {
             value={password}
             onChange={(e) => {
               setPassword(e.target.value);
-              setPasswordError(""); // Clear error when user starts typing
+              setPasswordError("");
             }}
             fullWidth
             margin="normal"
