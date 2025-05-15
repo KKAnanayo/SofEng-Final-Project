@@ -24,12 +24,6 @@ function Dashboard() {
     }
   }, [navigate]);
 
-  function handleClose() {
-    setModalLoginOpen(false);
-    setModalSignUpOpen(false);
-    window.location.href = "/menu";
-  }
-
   function handleLogin() {
     if (!admin || !password) {
       setAdminNameError(!admin);
@@ -87,7 +81,12 @@ function Dashboard() {
         console.log("Admin added successfully:", response.data);
         setAdminName("");
         setEditPassword("");
-        handleClose();
+
+        // Store the new admin in localStorage
+        localStorage.setItem("adminID", userData.AdminID);
+
+        // Close the modal and navigate to the admin page
+        setModalSignUpOpen(false);
         navigate("/admin");
       })
       .catch((error) => {
@@ -102,7 +101,7 @@ function Dashboard() {
         aria-labelledby="login-modal-title"
         aria-describedby="login-modal-description"
         className="custom-modal"
-        //onClose={handleClose}
+      //onClose={handleClose}
       >
         <Box className="login-container">
           <h2 id="login-modal-title">Admin Login</h2>
@@ -110,7 +109,13 @@ function Dashboard() {
             label="Admin ID"
             variant="outlined"
             value={admin}
-            onChange={(e) => setAdmin(e.target.value)}
+            onChange={(e) => {
+              const value = e.target.value;
+
+              if (/^\d*$/.test(value)) {
+                setAdmin(value);
+              }
+            }}
             fullWidth
             margin="normal"
             error={adminNameError}
@@ -123,12 +128,12 @@ function Dashboard() {
             value={password}
             onChange={(e) => {
               setPassword(e.target.value);
-              setPasswordError("");
+              setPasswordError(""); // Clear the error message when typing
             }}
             fullWidth
             margin="normal"
-            error={!!passwordError}
-            helperText={passwordError}
+            error={!!passwordError} // Convert the string to a boolean
+            helperText={passwordError} // Display the error message
           />
           <div
             className="button-container"
@@ -167,7 +172,7 @@ function Dashboard() {
         aria-labelledby="signup-modal-title"
         aria-describedby="signup-modal-description"
         className="custom-modal"
-        //onClose={handleClose}
+      //onClose={handleClose}
       >
         <Box className="login-container">
           <Typography
@@ -182,11 +187,17 @@ function Dashboard() {
             label="Admin ID"
             variant="outlined"
             value={adminName}
-            onChange={(e) => setAdminName(e.target.value)}
+            onChange={(e) => {
+              const value = e.target.value;
+
+              if (/^\d*$/.test(value)) {
+                setAdminName(value);
+              }
+            }}
             fullWidth
             margin="normal"
             error={adminNameError}
-            helperText={adminNameError && "Admin ID is required"}
+            helperText={adminNameError && "Admin ID is Wrong"}
           />
           <TextField
             label="Password"
@@ -196,8 +207,8 @@ function Dashboard() {
             onChange={(e) => setEditPassword(e.target.value)}
             fullWidth
             margin="normal"
-            error={passwordError}
-            helperText={passwordError && "Password is required"}
+            error={!!passwordError} // Convert the string to a boolean
+            helperText={passwordError} // Display the error message
           />
           <div style={{ marginBottom: "16px" }} />
           <Button variant="contained" onClick={handleAddAdmin}>
