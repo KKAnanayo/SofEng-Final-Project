@@ -42,7 +42,7 @@ function Dashboard() {
             navigate("/admin");
           } else {
             console.log("Incorrect password");
-            setPasswordError("Wrong password");
+            setPasswordError("Incorrect password");
           }
         } else {
           console.log("Admin not found");
@@ -115,11 +115,12 @@ function Dashboard() {
               if (/^\d*$/.test(value)) {
                 setAdmin(value);
               }
+              setAdminNameError(false); // Clear the error when typing
             }}
             fullWidth
             margin="normal"
             error={adminNameError}
-            helperText={adminNameError && "Admin ID is Wrong"}
+            helperText={adminNameError && (admin ? "Incorrect Admin ID" : "Admin ID is required")}
           />
           <TextField
             label="Password"
@@ -197,7 +198,7 @@ function Dashboard() {
             fullWidth
             margin="normal"
             error={adminNameError}
-            helperText={adminNameError && "Admin ID is Wrong"}
+            helperText={adminNameError && "Admin ID is required"}
           />
           <TextField
             label="Password"
@@ -208,7 +209,7 @@ function Dashboard() {
             fullWidth
             margin="normal"
             error={!!passwordError} // Convert the string to a boolean
-            helperText={passwordError} // Display the error message
+            helperText={passwordError && "Password is required"} // Display the error message
           />
           <div style={{ marginBottom: "16px" }} />
           <Button variant="contained" onClick={handleAddAdmin}>

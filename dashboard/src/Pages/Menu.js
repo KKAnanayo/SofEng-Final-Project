@@ -199,7 +199,7 @@ function Menu() {
                 {comments[selectedDish._id] && comments[selectedDish._id].length > 0 ? (
                   comments[selectedDish._id].map((comment, index) => (
                     <div key={index} style={{ marginBottom: "10px" }}>
-                      - {comment.text} (Rating: {comment.rating})
+                      - {comment.text} (Rating: {comment.rating} {comment.rating === 1 ? "star" : "stars"})
                     </div>
                   ))
                 ) : (
