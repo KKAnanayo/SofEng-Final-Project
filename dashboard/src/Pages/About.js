@@ -6,6 +6,8 @@ import gmailImg from "../Images/gmail.png";
 import phoneImg from "../Images/phone-call.png";
 import NavigateBefore from "@mui/icons-material/NavigateBefore";
 import NavigateNext from "@mui/icons-material/NavigateNext";
+import Image1 from "../Images/480282231_4137050093244286_1283169661060604225_n.jpg";
+import Image2 from "../Images/497679355_4223495187933109_4693298582754720504_n.jpg";
 
 function About() {
   const navigate = useNavigate();
@@ -57,7 +59,7 @@ function About() {
     {
       content1: "",
       image:
-        "https://scontent.fbag2-1.fna.fbcdn.net/v/t39.30808-6/477709287_1151390306994820_2515432605966298130_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=zJfQ7kf40IgQ7kNvwE16nnW&_nc_oc=AdkrX8H4cDm_qJsCrAE8BKT0gq4lzWmuvZb4dJ_Wlh8sE15RVK9QAUEoa_BSrTZaAuc&_nc_zt=23&_nc_ht=scontent.fbag2-1.fna&_nc_gid=UotzTHsNBSfOKsyJ6Qxphg&oh=00_AfGeq_0dOv35YfAYOKv687iEYgST6HC2cYI3DywD1ThsdQ&oe=680F7960",
+        Image1,
       content2: `Mrs. Baker’s is what you call a gathering of everything its head chef learned—from other brilliant chefs, to her visits abroad, food-tasting in other countries, and her studies. It’s a collection of all her experiences built into an empire that conquered the Vizcayanos’ taste.
       Though a native of the urban life, Chef Jehan calls Mrs. Baker’s a truly Vizcayano restaurant.
       “Mrs. Bakers…is a lot of contradictions, like it’s modern structurally, yet something about it feels homey and familiar. People say it’s like a kind of restaurant you’ll find in the city, yet if you come here and be inside the restaurant, something about [Mrs.] Baker’s personifies Vizcaya.”
@@ -86,7 +88,7 @@ function About() {
     {
       content1: "",
       image:
-        "https://scontent.fmnl17-6.fna.fbcdn.net/v/t39.30808-6/491398880_1211693264297857_5628817803514606674_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeF3TCK22bOAjk0ZBOoTZaEWW95QH6Pe2ytb3lAfo97bK7GLz3bWszYx4zBUzvAffqY57RraLMfxxB2c9OM99BsN&_nc_ohc=brJ8eINb330Q7kNvwGDQFfw&_nc_oc=Adkt6WH7qdGrfpmax3pF6KE-lgtYFpH98iuPH9AJjJze2kHJsmd4EDr7rHheh6TTPRw&_nc_zt=23&_nc_ht=scontent.fmnl17-6.fna&_nc_gid=PEAW2-UJY2A2ZT0UsaT4Eg&oh=00_AfFg-Ie3SXr1I0LGIdBHIC0t1TLC8caBv5gYVoXT5C_tmQ&oe=680FB6F2",
+        Image2,
       content2: `"I am proud of them—we share the same vision. I’m proud of the team that we have now. We are like a family. I know each and everyone in the team and their families as well. Our being a family is something that I feel proud of, because that is when I feel very much myself and at home in my own kitchen,” she shares.
       "A great dish for me is something that has a soul, reminiscent of a story, something cooked with passion,” she begins her story in the documentary.
       In the coming moooooore years, however, we are quite sure Mrs. Baker’s will see itself as Chef Jehan envisioned: a leader in Cagayan Valley’s food industry.

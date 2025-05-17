@@ -303,9 +303,14 @@ function Admin() {
             placeholder="Price"
             fullWidth
             value={price}
-            onChange={(e) => setPrice(e.target.value)}
+            onChange={(e) => {
+              const value = e.target.value;
+              if (/^\d*\.?\d*$/.test(value)) { // Allow only numbers and a single decimal point
+                setPrice(value);
+              }
+            }}
             error={priceError}
-            helperText={priceError ? "Price is Required" : ""}
+            helperText={priceError ? "Price is Required and must be a number" : ""}
           />
           <TextField
             className="text-field"
@@ -406,9 +411,14 @@ function Admin() {
             type="text"
             fullWidth
             value={editPrice}
-            onChange={(e) => setEditPrice(e.target.value)}
+            onChange={(e) => {
+              const value = e.target.value;
+              if (/^\d*\.?\d*$/.test(value)) { // Allow only numbers and a single decimal point
+                setEditPrice(value);
+              }
+            }}
             error={editPriceError}
-            helperText={editPriceError ? "Price is Required" : ""}
+            helperText={editPriceError ? "Price is Required and must be a number" : ""}
           />
           <TextField
             margin="dense"

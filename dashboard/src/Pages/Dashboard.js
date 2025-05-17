@@ -90,7 +90,15 @@ function Dashboard() {
         navigate("/admin");
       })
       .catch((error) => {
-        console.error("Error adding admin:", error);
+        if (error.response && error.response.status === 400) {
+          if (error.response.data.message === "Admin ID already exists!") {
+            setAdminNameError(true); // Highlight the Admin ID field
+            setPasswordError(""); // Clear password error
+          }
+          console.error("Error:", error.response.data.message);
+        } else {
+          console.error("Error adding admin:", error);
+        }
       });
   }
 
@@ -194,11 +202,12 @@ function Dashboard() {
               if (/^\d*$/.test(value)) {
                 setAdminName(value);
               }
+              setAdminNameError(false); // Clear the error when typing
             }}
             fullWidth
             margin="normal"
             error={adminNameError}
-            helperText={adminNameError && "Admin ID is required"}
+            helperText={adminNameError ? "Admin ID already exist!" : "Admin ID is required"}
           />
           <TextField
             label="Password"

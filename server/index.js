@@ -35,8 +35,12 @@ app.post("/addAdmin", async (req, res) => {
     await admin.save();
     res.json({ success: true, message: "Admin added successfully!" });
   } catch (error) {
-    console.error("Error adding admin:", error);
-    res.status(500).json({ error: "Internal Server Error" });
+    if (error.code === 11000) { // MongoDB duplicate key error code
+      res.status(400).json({ success: false, message: "Admin ID already exists!" });
+    } else {
+      console.error("Error adding admin:", error);
+      res.status(500).json({ success: false, message: "Internal Server Error" });
+    }
   }
 });
 
