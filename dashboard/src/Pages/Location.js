@@ -26,7 +26,7 @@ function Location() {
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
           className="map"
-          title="Mrs. Baker's Restaurant Location Map" // Added title attribute
+          title="Mrs. Baker's Restaurant Location Map" 
         />
       </div>
       <div>

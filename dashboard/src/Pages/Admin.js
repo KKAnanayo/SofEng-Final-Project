@@ -188,7 +188,7 @@ function Admin() {
     setEditPrice("");
     setEditDescription("");
     if (editButtonRef.current) {
-      editButtonRef.current.focus(); // Return focus to the Edit button
+      editButtonRef.current.focus(); 
     }
   };
 
@@ -201,7 +201,7 @@ function Admin() {
     setDeleteDialogOpen(false);
     setDeleteId(null);
     if (deleteButtonRef.current) {
-      deleteButtonRef.current.focus(); // Return focus to the Delete button
+      deleteButtonRef.current.focus(); 
     }
   };
 
@@ -234,7 +234,7 @@ function Admin() {
 
   const updateImage = async () => {
     if (!validateEditFields()) {
-      return; // Stop if validation fails
+      return; 
     }
 
     try {
@@ -305,7 +305,7 @@ function Admin() {
             value={price}
             onChange={(e) => {
               const value = e.target.value;
-              if (/^\d*\.?\d*$/.test(value)) { // Allow only numbers and a single decimal point
+              if (/^\d*\.?\d*$/.test(value)) { 
                 setPrice(value);
               }
             }}

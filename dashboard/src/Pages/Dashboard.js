@@ -82,18 +82,18 @@ function Dashboard() {
         setAdminName("");
         setEditPassword("");
 
-        // Store the new admin in localStorage
+      
         localStorage.setItem("adminID", userData.AdminID);
 
-        // Close the modal and navigate to the admin page
+        
         setModalSignUpOpen(false);
         navigate("/admin");
       })
       .catch((error) => {
         if (error.response && error.response.status === 400) {
           if (error.response.data.message === "Admin ID already exists!") {
-            setAdminNameError(true); // Highlight the Admin ID field
-            setPasswordError(""); // Clear password error
+            setAdminNameError(true); 
+            setPasswordError(""); 
           }
           console.error("Error:", error.response.data.message);
         } else {
@@ -123,7 +123,7 @@ function Dashboard() {
               if (/^\d*$/.test(value)) {
                 setAdmin(value);
               }
-              setAdminNameError(false); // Clear the error when typing
+              setAdminNameError(false); 
             }}
             fullWidth
             margin="normal"
@@ -137,12 +137,12 @@ function Dashboard() {
             value={password}
             onChange={(e) => {
               setPassword(e.target.value);
-              setPasswordError(""); // Clear the error message when typing
+              setPasswordError(""); 
             }}
             fullWidth
             margin="normal"
-            error={!!passwordError} // Convert the string to a boolean
-            helperText={passwordError} // Display the error message
+            error={!!passwordError} 
+            helperText={passwordError} 
           />
           <div
             className="button-container"
@@ -202,7 +202,7 @@ function Dashboard() {
               if (/^\d*$/.test(value)) {
                 setAdminName(value);
               }
-              setAdminNameError(false); // Clear the error when typing
+              setAdminNameError(false); 
             }}
             fullWidth
             margin="normal"
@@ -217,8 +217,8 @@ function Dashboard() {
             onChange={(e) => setEditPassword(e.target.value)}
             fullWidth
             margin="normal"
-            error={!!passwordError} // Convert the string to a boolean
-            helperText={passwordError && "Password is required"} // Display the error message
+            error={!!passwordError} 
+            helperText={passwordError && "Password is required"} 
           />
           <div style={{ marginBottom: "16px" }} />
           <Button variant="contained" onClick={handleAddAdmin}>
